@@ -1,3 +1,15 @@
+/*
+* Author: alganthe
+* Add self made ACE3 interactions children.
+* DO NOT call, this is used only to return the children actions in derp_fnc_actions
+*
+* Arguments:
+* 0: How far in the tree we are <NUMBER>
+* 1: Arguments passed internally <ARRAY>
+*
+* Return Value:
+* children actions (warning massive array)
+*/
 params [["_actionMode", 0], ["_passedArgs", []]];
 
 private _actions = [];
