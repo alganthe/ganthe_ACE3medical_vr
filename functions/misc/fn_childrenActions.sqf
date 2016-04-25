@@ -22,7 +22,7 @@ switch (_actionMode) do {
                 [],
                 terminal
             ];
-        } foreach ["bullet", "grenade", "explosive", "shell", "vehiclecrash", "backblast"];
+        } foreach ["bullet", "grenade", "explosive", "shell", "vehiclecrash", "backblast", "stab", "punch", "falling", "ropeburn"];
         _actions
     };
 
