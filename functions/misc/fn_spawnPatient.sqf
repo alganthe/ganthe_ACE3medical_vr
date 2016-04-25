@@ -19,7 +19,10 @@ diag_log format ["%1 %2 %3", _damage, _selection, _damageType];
 
 _group = createGroup west;
 _unit = _group createUnit ["B_HeavyGunner_F", spawnThingy, [], 0, "NONE"];
-_unit setCaptive true;
+_unit disableAI "TARGET";
+_unit disableAI "AUTOTARGET";
+_unit disableAI "AUTOCOMBAT";
+{_x addCuratorEditableObjects [[_unit],false]} foreach allCurators;
 [_unit, _damage, _selection, _damageType] call ace_medical_fnc_addDamageToUnit;
 
 _unit
