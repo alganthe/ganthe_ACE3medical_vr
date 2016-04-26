@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=27;
+		nextID=33;
 	};
 	class Camera
 	{
-		pos[]={4364.3975,18.531347,7516.8916};
-		dir[]={0.0058176145,-0.58635545,0.81011593};
-		up[]={0.0042085662,0.81000668,0.58638626};
-		aside[]={1.000044,-6.5683707e-008,-0.007178755};
+		pos[]={4370.0981,14.80931,7539.7236};
+		dir[]={0.80921531,-0.58645499,0.037896372};
+		up[]={0.58593285,0.80987424,0.027439907};
+		aside[]={0.04678737,-1.4521211e-006,-0.99900001};
 	};
 };
 binarizationWanted=0;
@@ -24,11 +24,11 @@ addons[]=
 	"A3_Characters_F_BLUFOR",
 	"a3_characters_f",
 	"A3_Structures_F_Bootcamp_VR_Helpers",
-	"A3_Structures_F_Mil_Cargo",
 	"ace_medical",
 	"A3_Modules_F_Multiplayer",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Props_F_Exp_A_Military_Equipment"
+	"A3_Props_F_Exp_A_Military_Equipment",
+	"A3_Structures_F_Mil_Cargo"
 };
 randomSeed=8399203;
 class ScenarioData
@@ -56,7 +56,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			dataType="Group";
@@ -79,15 +79,6 @@ class Mission
 						isPlayer=1;
 						class Inventory
 						{
-							class handgun
-							{
-								name="hgun_P07_F";
-								class primaryMuzzleMag
-								{
-									name="16Rnd_9x21_Mag";
-									ammoLeft=17;
-								};
-							};
 							class uniform
 							{
 								typeName="U_B_CombatUniform_mcam_tshirt";
@@ -276,21 +267,6 @@ class Mission
 			};
 		};
 		class Item2
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4387.3594,8.8693323,7541.832};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=13;
-			type="Land_Medevac_HQ_V1_F";
-		};
-		class Item3
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -570,7 +546,7 @@ class Mission
 				nAttributes=14;
 			};
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -831,7 +807,7 @@ class Mission
 				nAttributes=13;
 			};
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -902,7 +878,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -935,7 +911,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -987,27 +963,13 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4371.3032,5.1912909,7538.9409};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=21;
-			type="ACE_medicalSupplyCrate_advanced";
-		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4371.2744,5.1912909,7538.3457};
+				position[]={4382.3726,5.1912909,7536.0859};
+				angles[]={0,4.7143011,0};
 			};
 			side="Empty";
 			flags=4;
@@ -1017,12 +979,13 @@ class Mission
 			id=22;
 			type="ACE_medicalSupplyCrate_advanced";
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4371.2266,5.1912909,7537.6831};
+				position[]={4381.4541,5.1912909,7541.2832};
+				angles[]={0,4.7080698,0};
 			};
 			side="Empty";
 			flags=4;
@@ -1032,7 +995,7 @@ class Mission
 			id=23;
 			type="ACE_medicalSupplyCrate_advanced";
 		};
-		class Item11
+		class Item9
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1141,7 +1104,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item12
+		class Item10
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1250,7 +1213,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item13
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1290,6 +1253,53 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item12
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4381.4668,5.1912909,7542.5928};
+				angles[]={0,4.7111001,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=30;
+			type="ACE_medicalSupplyCrate";
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4387.3594,8.8693323,7541.832};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=13;
+			type="Land_Medevac_HQ_V1_F";
+		};
+		class Item14
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4382.3735,5.1912909,7537.4575};
+				angles[]={0,4.7111001,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=32;
+			type="ACE_medicalSupplyCrate";
 		};
 	};
 	class Connections

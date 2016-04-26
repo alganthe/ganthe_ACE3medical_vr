@@ -3,20 +3,28 @@
 * Add self made ACE3 interactions
 *
 * Arguments:
-* None
+* 0: Object to add the actions to <OBJECT>
+* 1: Object to spawn the unit on <OBJECT>
 *
 * Return Value:
 * nothing
 */
+params ["_actionObject", "_spawnObject"];
+
 _actionMain = [
         "spawnPatientMain",
         "Spawn patient",
         "",
         {true},
         {true},
-        {[0] call derp_fnc_childrenActions}
+        {
+            params ["", "", "_args"];
+            _args params ["_actionObject", "_spawnObject"];
+            [0, _actionObject, _spawnObject] call derp_fnc_childrenActions;
+        },
+        [_actionObject, _spawnObject]
     ] call ace_interact_menu_fnc_createAction;
-[terminal, 0, ["ACE_MainActions"], _actionMain] call ace_interact_menu_fnc_addActionToObject;
+[_actionObject, 0, ["ACE_MainActions"], _actionMain] call ace_interact_menu_fnc_addActionToObject;
 
 _removePatients = [
         "removePatients",
@@ -25,6 +33,8 @@ _removePatients = [
         {true},
         {true},
         {
+            params ["", "", "_args"];
+            _args params ["_actionObject"];
             [[[
                 "removeDeadPatients",
                 "Dead",
@@ -35,7 +45,7 @@ _removePatients = [
                 {true}
             ] call ace_interact_menu_fnc_createAction,
             [],
-            terminal],
+            _actionObject],
 
             [[
                 "removeAlivePatients",
@@ -47,10 +57,11 @@ _removePatients = [
                 {true}
             ] call ace_interact_menu_fnc_createAction,
             [],
-            terminal]]
-        }
+            _actionObject]]
+        },
+        [_actionObject]
     ] call ace_interact_menu_fnc_createAction;
-[terminal, 0, ["ACE_MainActions"], _removePatients] call ace_interact_menu_fnc_addActionToObject;
+[_actionObject, 0, ["ACE_MainActions"], _removePatients] call ace_interact_menu_fnc_addActionToObject;
 
 _clearLitter = [
         "clearLitter",
@@ -66,4 +77,4 @@ _clearLitter = [
         },
         {true}
     ] call ace_interact_menu_fnc_createAction;
-[terminal, 0, ["ACE_MainActions"], _clearLitter] call ace_interact_menu_fnc_addActionToObject;
+[_actionObject, 0, ["ACE_MainActions"], _clearLitter] call ace_interact_menu_fnc_addActionToObject;

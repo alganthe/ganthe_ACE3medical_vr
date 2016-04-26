@@ -10,7 +10,7 @@
 * Return Value:
 * children actions (warning massive array)
 */
-params [["_actionMode", 0], ["_passedArgs", []]];
+params [["_actionMode", 0], "_actionObject", "_spawnObject", ["_passedArgs", []]];
 
 private _actions = [];
 switch (_actionMode) do {
@@ -26,15 +26,15 @@ switch (_actionMode) do {
                     {true},
                     {
                         params ["", "", "_args"];
-                        _args params ["_damageType"];
-                        [1, [_damageType]] call derp_fnc_childrenActions
+                        _args params ["_actionObject", "_spawnObject", "_damageType"];
+                        [1, _actionObject, _spawnObject, [_damageType]] call derp_fnc_childrenActions;
                     },
-                    [_x]
+                    [_actionObject, _spawnObject, _x]
                 ] call ace_interact_menu_fnc_createAction,
                 [],
-                terminal
+                _actionObject
             ];
-        } foreach ["bullet", "grenade", "explosive", "shell", "vehiclecrash", "backblast", "stab", "punch", "falling", "ropeburn"];
+        } foreach ((configfile >> "ACE_Medical_Advanced" >> "Injuries" >> "damageTypes") call BIS_fnc_getCfgSubClasses);
         _actions
     };
 
@@ -50,13 +50,13 @@ switch (_actionMode) do {
                     {true},
                     {
                         params ["", "", "_args"];
-                        _args params ["_currentDamageType", "_currentSelection"];
-                        [2, [_currentDamageType, _currentSelection]] call derp_fnc_childrenActions
+                        _args params ["_actionObject", "_spawnObject", "_currentDamageType", "_currentSelection"];
+                        [2, _actionObject, _spawnObject, [_currentDamageType, _currentSelection]] call derp_fnc_childrenActions;
                     },
-                    [_currentDamageType, _x]
+                    [_actionObject, _spawnObject, _currentDamageType, _x]
                 ] call ace_interact_menu_fnc_createAction,
                 [],
-                terminal
+                _actionObject
             ],
         } foreach ["head", "body", "hand_r", "hand_l", "leg_l", "leg_r"];
         _actions
@@ -72,15 +72,15 @@ switch (_actionMode) do {
                     "",
                     {
                         params ["", "", "_args"];
-                        _args params ["_damage", "_currentSelection", "_currentDamageType"];
-                        [_damage, _currentSelection, _currentDamageType] call derp_fnc_spawnPatient
+                        _args params ["_spawnObject", "_damage", "_currentSelection", "_currentDamageType"];
+                        [_spawnObject, _damage, _currentSelection, _currentDamageType] call derp_fnc_spawnPatient;
                     },
                     {true},
                     {},
-                    [_x, _currentSelection, _currentDamageType]
+                    [_spawnObject, _x, _currentSelection, _currentDamageType]
                 ] call ace_interact_menu_fnc_createAction,
                 [],
-                terminal
+                _actionObject
             ];
         } foreach [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8];
         _actions
