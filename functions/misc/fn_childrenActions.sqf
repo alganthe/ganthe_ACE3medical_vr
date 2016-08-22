@@ -72,12 +72,12 @@ switch (_actionMode) do {
                     "",
                     {
                         params ["", "", "_args"];
-                        _args params ["_spawnObject", "_damage", "_currentSelection", "_currentDamageType"];
-                        [_spawnObject, _damage, _currentSelection, _currentDamageType] call derp_fnc_spawnPatient;
+                        _args params ["_spawnObject", "_damage", "_currentSelection", "_currentDamageType", "_actionObject"];
+                        [_spawnObject, _damage, _currentSelection, _currentDamageType, _actionObject] remoteExecCall ["derp_fnc_spawnPatient", 2];
                     },
                     {true},
                     {},
-                    [_spawnObject, _x, _currentSelection, _currentDamageType]
+                    [_spawnObject, _x, _currentSelection, _currentDamageType, _actionObject]
                 ] call ace_interact_menu_fnc_createAction,
                 [],
                 _actionObject

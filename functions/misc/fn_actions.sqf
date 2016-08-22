@@ -33,16 +33,25 @@ _removePatients = [
         {true},
         {true},
         {
-            params ["", "", "_args"];
+            params ["_target", "", "_args"];
             _args params ["_actionObject"];
             [[[
                 "removeDeadPatients",
                 "Dead",
                 "",
                 {
-                    {deleteVehicle _x} foreach allDeadMen;
+                    params ["", "", "_params"];
+                    private _actionObject = _params select 0;
+
+                    private _isObjectAlreadyInArray = derp_patientArray find _actionObject;
+
+                    if !(_isObjectAlreadyInArray isEqualTo -1) then {
+                        [1, _actionObject, _isObjectAlreadyInArray + 1] remoteExecCall ["derp_fnc_removePatients", 2];
+                    };
                 },
-                {true}
+                {true},
+                {},
+                [_actionObject]
             ] call ace_interact_menu_fnc_createAction,
             [],
             _actionObject],
@@ -52,9 +61,18 @@ _removePatients = [
                 "Alive",
                 "",
                 {
-                    {if (!isPlayer _x) then {deleteVehicle _x}} foreach allUnits;
+                    params ["", "", "_params"];
+                    private _actionObject = _params select 0;
+
+                    private _isObjectAlreadyInArray = derp_patientArray find _actionObject;
+
+                    if !(_isObjectAlreadyInArray isEqualTo -1) then {
+                        [0, _actionObject, _isObjectAlreadyInArray + 1] remoteExecCall ["derp_fnc_removePatients", 2];
+                    };
                 },
-                {true}
+                {true},
+                {},
+                [_actionObject]
             ] call ace_interact_menu_fnc_createAction,
             [],
             _actionObject]]
@@ -68,12 +86,7 @@ _clearLitter = [
         "Clear litter",
         "",
         {
-            {
-                _x params ["", "_objects"];
-                {deleteVehicle _x} forEach _objects;
-                ace_medical_allCreatedLitter set [_forEachIndex, objNull];
-            } forEach ace_medical_allCreatedLitter;
-            ace_medical_allCreatedLitter = ace_medical_allCreatedLitter - [objNull];
+            remoteExecCall ["derp_fnc_removeLitter", -2];
         },
         {true}
     ] call ace_interact_menu_fnc_createAction;

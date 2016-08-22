@@ -4,5 +4,7 @@ class derp {
         class spawnPatient {};
         class actions {};
         class childrenActions {};
+        class removeLitter {};
+        class removePatients {};
     };
 };
