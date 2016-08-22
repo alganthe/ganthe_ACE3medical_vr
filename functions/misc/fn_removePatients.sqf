@@ -32,7 +32,6 @@ switch (_mode) do {
         } foreach (derp_patientArray select _arrayIndex);
     };
 };
-str derp_patientArray remoteExec ["systemChat", 0];
 
 // Because deleteVehicle is too slow
  [{
