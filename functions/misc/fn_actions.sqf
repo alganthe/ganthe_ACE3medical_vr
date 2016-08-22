@@ -4,7 +4,7 @@
 *
 * Arguments:
 * 0: Object to add the actions to <OBJECT>
-* 1: Object to spawn the unit on <OBJECT>
+* 1: Object to spawn the units spawned via the actions on <OBJECT>
 *
 * Return Value:
 * nothing

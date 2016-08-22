@@ -1,3 +1,13 @@
+/*
+* Author: alganthe
+* Remove litter objects
+*
+* Arguments:
+* None
+*
+* Return Value:
+* Nothing
+*/
 {
     _x params ["", "_objects"];
     {deleteVehicle _x} forEach _objects;
