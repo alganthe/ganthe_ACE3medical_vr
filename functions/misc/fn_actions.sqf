@@ -86,7 +86,7 @@ _clearLitter = [
         "Clear litter",
         "",
         {
-            remoteExecCall ["derp_fnc_removeLitter", -2];
+            remoteExecCall ["derp_fnc_removeLitter", 0];
         },
         {true}
     ] call ace_interact_menu_fnc_createAction;

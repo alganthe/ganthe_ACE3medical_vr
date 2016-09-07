@@ -20,7 +20,7 @@ params ["_spawnObject","_damage", ["_selection", "body"], ["_damageType", "bulle
 
 private _group = createGroup west;
 private _unit = _group createUnit ["b_survivor_F", _spawnObject, [], 0, "NONE"];
-_unit disableAI "TARGET";
+_unit disableAI "PATH";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "AUTOCOMBAT";
 {_x addCuratorEditableObjects [[_unit],false]} foreach allCurators;
