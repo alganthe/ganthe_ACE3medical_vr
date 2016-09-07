@@ -6,5 +6,6 @@ class derp {
         class childrenActions {};
         class removeLitter {};
         class removePatients {};
+        class medicalDebugInfo {};
     };
 };

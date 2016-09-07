@@ -1,27 +1,27 @@
 //-------------------------On Load
-author = "alganthe";								// Visible when loading mission
-onLoadName = "Medical mission";								// Visible when loading mission
+author = "alganthe";                                // Visible when loading mission
+onLoadName = "Medical mission";                                // Visible when loading mission
 OnLoadMission = "";
 loadScreen = "";
 overviewPicture = "";
 
-onLoadIntro = "";										// Displays a message while the intro is loading.
-onLoadIntroTime = 0;									// Time and date displayed while the intro loads. 1 visible, 0 hidden.
-onLoadMissionTime = 0;									// Time and date displayed while the mission loads. 1 visible, 0 hidden.
+onLoadIntro = "";                                        // Displays a message while the intro is loading.
+onLoadIntroTime = 0;                                    // Time and date displayed while the intro loads. 1 visible, 0 hidden.
+onLoadMissionTime = 0;                                    // Time and date displayed while the mission loads. 1 visible, 0 hidden.
 
 class Header {
-	gameType = "COOP";									// Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend.
-	minPlayers = 1;										// Min # of players the MISSION supports
-	maxPlayers = 1;									// Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots.
+    gameType = "COOP";                                    // Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend.
+    minPlayers = 1;                                        // Min # of players the MISSION supports
+    maxPlayers = 1;                                    // Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots.
 };
 
 //-------------------------Misc
 disableChannels[] = {{0, true, true}, {1, false, true}, {2, true, true}, {6, true, true}};                          // 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global.
-disabledAI = 1;											// No AI in playable units
-aiKills = 0; 											// disable scorelist for AI players
-enableItemsDropping = 0; 								// disabled with 0
-joinUnassigned = 1;										// 0 = players forced into role on join
-enableDebugConsole = 1; 								// 0 = editor default behavior, 1 = SP / Hosts / Logged admin, 2 = everyone
+disabledAI = 1;                                            // No AI in playable units
+aiKills = 0;                                             // disable scorelist for AI players
+enableItemsDropping = 0;                                 // disabled with 0
+joinUnassigned = 1;                                        // 0 = players forced into role on join
+enableDebugConsole = 1;                                 // 0 = editor default behavior, 1 = SP / Hosts / Logged admin, 2 = everyone
 
 //-------------------------Respawn
 respawn = 3;
@@ -43,5 +43,14 @@ corpseRemovalMaxTime = 600;
 
 //-------------------------Functions
 class CfgFunctions {
-	#include "functions\functions.hpp"
+    #include "functions\functions.hpp"
+};
+
+class Params {
+    class Debug {
+        title = "Debug mode (inteded for advanced medical only)";
+        values[] = {0, 1};
+        texts[] = {"Off", "On"};
+        default = 0;
+    };
 };

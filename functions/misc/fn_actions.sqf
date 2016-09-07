@@ -11,7 +11,7 @@
 */
 params ["_actionObject", "_spawnObject"];
 
-_actionMain = [
+private _actionMain = [
         "spawnPatientMain",
         "Spawn patient",
         "",
@@ -26,7 +26,7 @@ _actionMain = [
     ] call ace_interact_menu_fnc_createAction;
 [_actionObject, 0, ["ACE_MainActions"], _actionMain] call ace_interact_menu_fnc_addActionToObject;
 
-_removePatients = [
+private _removePatients = [
         "removePatients",
         "remove patients",
         "",
@@ -81,7 +81,7 @@ _removePatients = [
     ] call ace_interact_menu_fnc_createAction;
 [_actionObject, 0, ["ACE_MainActions"], _removePatients] call ace_interact_menu_fnc_addActionToObject;
 
-_clearLitter = [
+private _clearLitter = [
         "clearLitter",
         "Clear litter",
         "",
