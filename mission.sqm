@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=78;
+		nextID=79;
 	};
 	class Camera
 	{
-		pos[]={4346.5308,63.610924,7487.3188};
-		dir[]={0.094394758,-0.82627434,0.55551857};
-		up[]={0.13842782,0.56312263,0.8146556};
-		aside[]={0.98596346,-2.4192232e-006,-0.16753364};
+		pos[]={4363.5078,33.263008,7496.9063};
+		dir[]={0.02852308,-0.71307325,0.70068055};
+		up[]={0.029008593,0.70091897,0.7126053};
+		aside[]={0.99926776,-1.8237206e-006,-0.040674433};
 	};
 };
 binarizationWanted=0;
@@ -1339,9 +1339,9 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4388.9248,5,7524.7651};
+				position[]={4387.1519,5,7524.2998};
 			};
-			id=77;
+			id=78;
 			type="ACE_moduleAdvancedMedicalSettings";
 			class CustomAttributes
 			{
@@ -1493,7 +1493,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
