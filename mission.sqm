@@ -8,14 +8,14 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=79;
+		nextID=82;
 	};
 	class Camera
 	{
-		pos[]={4359.4971,26.090513,7507.7422};
-		dir[]={0.18235703,-0.65661037,0.732014};
-		up[]={0.15875709,0.75405687,0.63727844};
-		aside[]={0.97043091,-1.6326594e-006,-0.24174733};
+		pos[]={4356.709,34.350327,7496.5166};
+		dir[]={-0.0091758082,-0.57336515,0.8193922};
+		up[]={-0.0064221164,0.81912887,0.57351047};
+		aside[]={1.0000265,-1.1535768e-006,0.011201592};
 	};
 };
 binarizationWanted=0;
@@ -428,7 +428,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4362.7285,5,7536.1982};
+				position[]={4354.0547,5,7536.147};
 			};
 			id=24;
 			type="ModuleRespawnPosition_F";
@@ -1059,9 +1059,9 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4385.5371,5,7524.0898};
+				position[]={4383.9082,5,7523.8428};
 			};
-			id=76;
+			id=80;
 			type="ACE_moduleMedicalSettings";
 			class CustomAttributes
 			{
@@ -1339,9 +1339,9 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4387.1519,5,7524.2998};
+				position[]={4381.9932,5,7524.0942};
 			};
-			id=78;
+			id=81;
 			type="ACE_moduleAdvancedMedicalSettings";
 			class CustomAttributes
 			{
@@ -1493,7 +1493,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
